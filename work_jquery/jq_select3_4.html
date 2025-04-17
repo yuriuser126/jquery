@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $(function () {
+            // .val() : 해당요소의 value 값
+            var result_1 = $("#user_name").val();
+            console.log(result_1); //결과값 : 용대리
+            
+            // hello -> jquery 로 변경되었다 화면안에서
+            $("#user_id").val("jquery");
+
+            // prop : 해당 속성값
+            // value : 현재 value 값
+            var result_2 = $("#user_id").prop("value");
+            console.log(result_2); //결과값 : jquery
+            
+            // defaultValue : 초기 value 값이 나온다
+            var result_3 = $("#user_id").prop("defaultValue");
+            console.log(result_3); //결과값 : hello
+        });
+    </script>
+</head>
+<body>
+<h1>객체 조작 및 생성</h1>
+<form action="#" id ="form_1">
+    <p>
+        <label for ="user_"></label>
+        <input type ="text" name ="user_name" id = "user_name" value="용대리">
+    </p>
+    <p>
+        <label for ="user_id"></label>
+        <input type ="text" name ="user_id" id = "user_id" value="hello">
+    </p>
+</form>
+    
+</body>
+</html>

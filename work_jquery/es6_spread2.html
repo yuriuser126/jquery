@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const num = [1, 2, 3];
+
+        function sum(x, y, z) {
+            return x + y + z;
+        }
+        // console.log(sum(1,2,3)); //6값이 나옴
+        // console.log(sum(num)); //오류
+        // console.log(sum(...num)); //6값이 나옴
+        // console.log(sum(10,...num)); //13값이 나옴 10이먼저 들어가고 -> 10 1 2 이렇게. : 13 
+
+        //...arr : 가변적 매개변수
+        function sum2(x, ...arr) {
+            return [x, ...arr];
+        }
+        //...arr에서 1을 받음
+        // console.log(sum2("홍길동",1));
+        //...arr에서 1,2,"hello"을 받음
+        console.log(sum2("홍길동", 1, 2, "hello"));
+
+
+        // A rest parameter must be last in a parameter list.
+        //가변적 매개변수 - 단 마지막에 작성(처음에 넣어서 오류)
+        // function sum3 (...arr,x){
+        //     return [x,...arr];
+        // }
+
+        function sum4 (x,y=10,z=100){
+            return x+y+z;
+        }
+        console.log(sum4(1)); // 111출력 : x를 1로 처리 
+        console.log(sum4(1,2)); // 111출력 : x를 1로 처리 y를 2로처리
+        console.log(sum4(1,2,3)); // 6
+        console.log(sum4([1,2,3,4])); // 1,2,3,410100(계산안됨)
+        console.log(sum4(...[1,2,3,4])); // 배열원소 1,2,3만 대입
+
+
+        // 함수의 default 매개값(마지막에 작성하는게 바람직)
+        function sum5 (x,y=10,z=100){
+            return x+y+z;
+        }
+        console.log(sum5(2,3)); // NaN오류
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

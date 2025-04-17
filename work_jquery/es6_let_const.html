@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        var a=1;
+        {
+            var a=2; //2
+        }
+        var a=3; 
+        //-> var는 다 퉁침침
+
+        //1->2
+        //2->3
+
+        console.log("@#a=>"+a);
+        console.log("@#b=>"+b);
+        
+        let aa=1;//전역변수
+        {
+            let aa=2; //지역변수
+            let bb=3; //지역변수
+            console.log("@#bb=>"+bb);//정상
+        }
+        //1->1
+        console.log("@#aa=>"+aa);
+        // console.log("@#bb=>"+bb);//오류뜸  catch할수 없다. 지역변수라서.밖에서 호출해서 그렇다.
+        
+        const x=1;
+        x=2; //오류가 난다.  :Assignment to constand variable(ㅈㅐ할당이 안됨) : 오류 
+        console.log("@#x=>"+x);
+
+        // employee:객체
+        const employee={name:"hong",age:24}
+        // employee{};오류 (객체는 변경불가)
+        // employee.name="kim" 속성의 값은 변경가능능
+        employee.name="kim"
+        console.log(employee);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

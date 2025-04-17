@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            // $("#inner_1").find(".txt1"). : 하위요소에서 해당클래스를 선택
+            $("#inner_1").find(".txt1").css({"background-color":"#ff0"});
+            // 선택한거 없음
+            // $("#inner_1 p").find(".txt2").css({"background-color":"#0ff"});
+            // .filter(".txt2") : inner_1 아이디의 p요소에서 해당클래스를 선택(하위가 아님)
+            $("#inner_1 p").filter(".txt2").css({"background-color":"#0ff"});
+
+        });
+    </script>
+</head>
+<body>
+    <div id="outer_wrap">
+        <h1>콘텐츠 탐색 선택자</h1>
+        <section id ="inner_1">
+            <h2>find(), filter()</h2>
+            <p class="txt1">내용1</p>
+            <p class="txt2">내용2</p>
+        </section>
+    </div>
+    
+</body>
+</html>
